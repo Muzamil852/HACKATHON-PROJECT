@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* Base Light Civic Operations Theme */
+*, *::before, *::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+html, body, #root {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light Card Utilities */
+.glass-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+}
+
+.glass-card-elevated {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+/* Radar Sweep Animation */
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-radar { animation: radar-sweep 4s linear infinite; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Leaflet Light Styling Overrides */
+.leaflet-container { background: #f1f5f9 !important; font-family: 'Inter', sans-serif !important; }
+.leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 12px !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.15) !important;
+}
+.leaflet-popup-tip { background: #ffffff !important; }
+.leaflet-control-zoom a {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+.leaflet-control-attribution { display: none !important; }
+
+/* Dossier Map Containment Boundaries */
+.dossier-map-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  height: 320px !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  border-radius: 12px !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+@media (max-width: 640px) {
+  .dossier-map-wrapper {
+    height: 260px !important;
+  }
+}
+
+.dossier-map-wrapper .leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.dossier-map-wrapper .leaflet-pane,
+.dossier-map-wrapper .leaflet-map-pane,
+.dossier-map-wrapper .leaflet-tile-pane,
+.dossier-map-wrapper .leaflet-overlay-pane,
+.dossier-map-wrapper .leaflet-marker-pane,
+.dossier-map-wrapper .leaflet-popup-pane {
+  z-index: auto !important;
+}

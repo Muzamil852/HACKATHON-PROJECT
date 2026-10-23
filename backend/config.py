@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     GEMINI_API_KEY: Optional[str] = None
     DATABASE_URL: str = "sqlite:///./civic_radar.db"
     UPLOAD_DIR: str = "uploads"
-    APP_NAME: str = "CIVIC RADAR"
+    APP_NAME: str = "CivicNova AI"
     DEBUG: bool = True
     
     class Config:

@@ -1,4 +1,4 @@
-"""Authentication router for CIVIC RADAR admin access."""
+"""Authentication router for CivicNova AI admin access."""
 from fastapi import APIRouter, HTTPException, Depends
 from schemas import LoginRequest, LoginResponse
 import uuid

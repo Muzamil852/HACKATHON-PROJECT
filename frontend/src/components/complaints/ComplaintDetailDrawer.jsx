@@ -185,7 +185,7 @@ export default function ComplaintDetailDrawer({ complaintId, onClose }) {
 
   const formatStructuredSummary = () => {
     if (!complaint) return '';
-    return `CIVIC RADAR — INCIDENT DISPATCH SUMMARY
+    return `CIVICNOVA AI — INCIDENT DISPATCH SUMMARY
 ----------------------------------------
 Complaint ID: ${complaint.complaint_id}
 Category: ${complaint.category || 'OTHER'}
@@ -207,7 +207,7 @@ ${explainability?.recommended_action || 'Emergency municipal inspection'}
 
 ${includeReporterInfo ? `REPORTER INFORMATION:\nName: ${complaint.citizen_name || 'N/A'}\nContact: ${complaint.citizen_contact || 'N/A'}` : 'REPORTER INFORMATION: Kept Confidential by Administrator Option'}
 ----------------------------------------
-Transmitted via Civic Radar Municipal Command Center`;
+Transmitted via CivicNova AI Municipal Command Center`;
   };
 
   if (!complaintId) return null;
@@ -462,7 +462,11 @@ Transmitted via Civic Radar Municipal Command Center`;
                         style={{ height: '100%', width: '100%', position: 'relative' }}
                         zoomControl={false}
                       >
-                        <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png" />
+                        <TileLayer
+                          attribution='&copy; <a href="https://www.esri.com/">Esri</a> &mdash; Street Map'
+                          url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+                          maxZoom={19}
+                        />
                         <Marker position={[complaint.latitude || 24.87, complaint.longitude || 67.05]} />
                         <MapResizer />
                       </MapContainer>

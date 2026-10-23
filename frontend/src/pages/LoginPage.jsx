@@ -61,17 +61,17 @@ export default function LoginPage() {
       >
         {/* Header */}
         <div className="text-center space-y-1">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 mb-1 shadow-xs">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 mb-1 shadow-xs">
             <Radar className="w-6 h-6" />
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">CIVIC RADAR</h1>
-          <p className="text-xs sm:text-sm text-slate-500 font-semibold">Administrator Operations Login</p>
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">CivicNova AI</h1>
+          <p className="text-xs sm:text-sm text-slate-500 font-semibold">Every Report. Smarter Decisions. Better Cities.</p>
         </div>
 
         {/* Demo Login Banner */}
-        <div className="p-3.5 rounded-xl bg-blue-50/80 border border-blue-200 text-xs text-blue-950 flex items-center justify-between gap-2 shadow-2xs">
+        <div className="p-3.5 rounded-xl bg-emerald-50/80 border border-emerald-200 text-xs text-emerald-950 flex items-center justify-between gap-2 shadow-2xs">
           <div className="flex items-center gap-2 min-w-0">
-            <ShieldCheck className="w-4 h-4 text-blue-600 shrink-0" />
+            <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
             <div className="truncate text-xs font-medium">
               <strong className="font-bold">Demo:</strong> admin@civic.gov / admin123
             </div>
@@ -79,7 +79,7 @@ export default function LoginPage() {
           <button
             type="button"
             onClick={handleDemoFill}
-            className="text-[11px] font-bold bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-lg transition-colors shrink-0 shadow-2xs"
+            className="text-[11px] font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1 rounded-lg transition-colors shrink-0 shadow-2xs"
           >
             Auto-fill
           </button>

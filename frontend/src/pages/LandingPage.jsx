@@ -345,8 +345,8 @@ export default function LandingPage() {
             </button>
 
             <Link to="/" className="flex items-center gap-2 whitespace-nowrap">
-              <Radar className="w-6 h-6 text-blue-600 shrink-0" />
-              <span className="text-lg font-black tracking-tight text-slate-900 whitespace-nowrap">CIVIC RADAR</span>
+              <Radar className="w-6 h-6 text-emerald-600 shrink-0" />
+              <span className="text-lg font-black tracking-tight text-slate-900 whitespace-nowrap">CivicNova AI</span>
             </Link>
           </div>
 
@@ -394,8 +394,8 @@ export default function LandingPage() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                   <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2">
-                    <Radar className="w-6 h-6 text-blue-600" />
-                    <span className="text-base font-black tracking-tight text-slate-900">CIVIC RADAR</span>
+                    <Radar className="w-6 h-6 text-emerald-600" />
+                    <span className="text-base font-black tracking-tight text-slate-900">CivicNova AI</span>
                   </Link>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -461,26 +461,26 @@ export default function LandingPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-center">
           {/* Left Editorial Content */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-              LIVE CIVIC INTELLIGENCE
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+              CIVICNOVA INTELLIGENCE
             </div>
 
             <h1 className="text-3xl sm:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]">
-              See what your city needs.{' '}
-              <span className="text-blue-600 underline decoration-blue-200 underline-offset-4">
-                Before it becomes a crisis.
+              Every Report.{' '}
+              <span className="text-emerald-600 underline decoration-emerald-200 underline-offset-4">
+                Smarter Decisions. Better Cities.
               </span>
             </h1>
 
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-medium max-w-lg">
-              Civic Radar turns citizen reports into AI-classified incidents, connected hotspots, and prioritized municipal action.
+              CivicNova AI turns citizen reports into AI-classified incidents, connected hotspots, and prioritized municipal action.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-3.5 pt-2">
               <Link
                 to="/report"
-                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold px-7 py-3.5 rounded-xl transition-all shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 text-sm"
+                className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-7 py-3.5 rounded-xl transition-all shadow-md shadow-emerald-600/20 flex items-center justify-center gap-2 text-sm"
               >
                 <span>REPORT A PROBLEM</span>
                 <ArrowRight className="w-4 h-4" />
@@ -489,13 +489,13 @@ export default function LandingPage() {
                 to="/login"
                 className="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-900 font-bold px-7 py-3.5 rounded-xl transition-all border border-slate-300 text-sm flex items-center justify-center gap-2 shadow-xs"
               >
-                <span>EXPLORE CIVIC RADAR</span>
+                <span>EXPLORE CIVICNOVA AI</span>
                 <ChevronRight className="w-4 h-4 text-slate-400" />
               </Link>
             </div>
           </div>
 
-          {/* Right Live Civic Radar Mini Map Visual */}
+          {/* Right Live CivicNova AI Mini Map Visual */}
           <div className="lg:col-span-6">
             <div className="bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden relative">
               <div className="p-3.5 sm:p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
@@ -511,7 +511,11 @@ export default function LandingPage() {
               {/* Map Canvas */}
               <div className="h-64 sm:h-72 w-full relative z-0">
                 <MapContainer center={[24.87, 67.05]} zoom={12} style={{ height: '100%', width: '100%' }} zoomControl={false}>
-                  <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png" />
+                  <TileLayer
+                    attribution='&copy; <a href="https://www.esri.com/">Esri</a> &mdash; Street Map'
+                    url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+                    maxZoom={19}
+                  />
                   
                   {hotspots.map((h, i) => (
                     <Circle
@@ -596,7 +600,7 @@ export default function LandingPage() {
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
-            Just describe the problem. Civic Radar uses AI to understand it, identify the responsible department, prioritize urgency and connect it with related incidents.
+            Just describe the problem. CivicNova AI uses AI to understand it, identify the responsible department, prioritize urgency and connect it with related incidents.
           </p>
         </div>
       </section>
@@ -604,9 +608,9 @@ export default function LandingPage() {
       {/* 4. "ONE PLATFORM. EVERY CIVIC SIGNAL." (INTERACTIVE CIVIC SIGNAL NETWORK) */}
       <section id="civic-signals" className="py-12 sm:py-16 px-4 sm:px-6 max-w-7xl mx-auto w-full space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-1">
-          <span className="text-[11px] font-bold text-blue-600 uppercase tracking-widest">INTERACTIVE CATEGORY NETWORK</span>
+          <span className="text-[11px] font-bold text-emerald-600 uppercase tracking-widest">INTERACTIVE CATEGORY NETWORK</span>
           <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">ONE PLATFORM. EVERY CIVIC SIGNAL.</h2>
-          <p className="text-xs text-slate-500 font-medium">Civic Radar converts raw citizen reports into AI-classified, prioritized, and department-routed municipal actions.</p>
+          <p className="text-xs text-slate-500 font-medium">CivicNova AI converts raw citizen reports into AI-classified, prioritized, and department-routed municipal actions.</p>
         </div>
 
         {/* 8 Category Tabs */}
@@ -958,7 +962,7 @@ export default function LandingPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
           <Link
             to="/report"
-            className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3.5 rounded-xl transition-all shadow-md shadow-blue-600/20 text-sm"
+            className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3.5 rounded-xl transition-all shadow-md shadow-emerald-600/20 text-sm"
           >
             REPORT A PROBLEM
           </Link>
@@ -966,7 +970,7 @@ export default function LandingPage() {
             to="/login"
             className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white font-bold px-8 py-3.5 rounded-xl transition-all text-sm"
           >
-            EXPLORE CIVIC RADAR
+            EXPLORE CIVICNOVA AI
           </Link>
         </div>
       </section>
@@ -976,11 +980,11 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="space-y-3">
             <Link to="/" className="flex items-center gap-2">
-              <Radar className="w-6 h-6 text-blue-600" />
-              <span className="text-base font-black tracking-tight text-slate-900">CIVIC RADAR</span>
+              <Radar className="w-6 h-6 text-emerald-600" />
+              <span className="text-base font-black tracking-tight text-slate-900">CivicNova AI</span>
             </Link>
             <p className="text-slate-500 text-xs leading-relaxed font-medium">
-              AI-powered civic intelligence & municipal response platform. Turning citizen reports into spatial intelligence.
+              Every Report. Smarter Decisions. Better Cities. AI-powered civic intelligence & municipal response platform.
             </p>
           </div>
 
@@ -1014,7 +1018,7 @@ export default function LandingPage() {
         </div>
 
         <div className="max-w-7xl mx-auto pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 font-medium">
-          <p>© 2026 Civic Radar • AI-Powered Civic Intelligence</p>
+          <p>© 2026 CivicNova AI • Every Report. Smarter Decisions. Better Cities.</p>
           <div className="flex items-center gap-6">
             <Link to="/report" className="hover:text-slate-700">Citizen Report</Link>
             <Link to="/track" className="hover:text-slate-700">Track Status</Link>

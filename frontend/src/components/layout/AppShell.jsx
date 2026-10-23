@@ -93,8 +93,8 @@ export default function AppShell() {
       <aside className="hidden lg:flex w-64 flex-col border-r border-slate-200 bg-white shrink-0 z-20">
         <div className="h-16 flex items-center px-6 border-b border-slate-200">
           <Link to="/" className="flex items-center gap-2">
-            <Radar className="w-6 h-6 text-blue-600 mr-1" />
-            <span className="text-lg font-extrabold tracking-tight text-slate-900">CIVIC RADAR</span>
+            <Radar className="w-6 h-6 text-emerald-600 mr-1" />
+            <span className="text-lg font-extrabold tracking-tight text-slate-900">CivicNova AI</span>
           </Link>
         </div>
 
@@ -141,8 +141,8 @@ export default function AppShell() {
             <div className="space-y-6">
               <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                 <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2">
-                  <Radar className="w-6 h-6 text-blue-600" />
-                  <span className="text-base font-black tracking-tight text-slate-900">CIVIC RADAR</span>
+                  <Radar className="w-6 h-6 text-emerald-600" />
+                  <span className="text-base font-black tracking-tight text-slate-900">CivicNova AI</span>
                 </Link>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -237,8 +237,8 @@ export default function AppShell() {
 
             {/* Mobile Logo Branding */}
             <Link to="/" className="lg:hidden flex items-center gap-1.5">
-              <Radar className="w-5 h-5 text-blue-600" />
-              <span className="text-sm font-black tracking-tight text-slate-900">CIVIC RADAR</span>
+              <Radar className="w-5 h-5 text-emerald-600" />
+              <span className="text-sm font-black tracking-tight text-slate-900">CivicNova AI</span>
             </Link>
 
             {/* Desktop Zone Badge */}

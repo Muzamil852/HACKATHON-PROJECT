@@ -37,8 +37,8 @@ export default function HotspotsPage() {
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-3">
-            <Radar className="w-7 h-7 text-blue-600" />
-            Civic Radar — Hotspot Intelligence
+            <Radar className="w-7 h-7 text-emerald-600" />
+            CivicNova AI — Hotspot Intelligence
           </h1>
           <p className="text-xs text-slate-500 mt-1">
             Real-time spatial clustering and emerging incident hotspots across Karachi municipal zones.
@@ -81,9 +81,9 @@ export default function HotspotsPage() {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6" style={{ height: '540px' }}>
+      <div className="flex flex-col lg:grid lg:grid-cols-3 gap-6 min-h-[500px] lg:h-[540px]">
         {/* Map */}
-        <Card className="lg:col-span-2 h-full flex flex-col p-0 overflow-hidden relative border-slate-200">
+        <Card className="lg:col-span-2 h-[340px] sm:h-[400px] lg:h-full flex flex-col p-0 overflow-hidden relative border-slate-200">
           <div className="absolute top-3 left-3 z-[400] pointer-events-none">
             <div className="bg-white/90 backdrop-blur-xs px-3 py-2 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2">
               <Zap className="w-4 h-4 text-amber-600" />
@@ -98,7 +98,11 @@ export default function HotspotsPage() {
               </div>
             ) : (
               <MapContainer center={[24.87, 67.05]} zoom={12} style={{ height: '100%', width: '100%' }} zoomControl={false}>
-                <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png" />
+                <TileLayer
+                  attribution='&copy; <a href="https://www.esri.com/">Esri</a> &mdash; Street Map'
+                  url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+                  maxZoom={19}
+                />
 
                 {filteredHotspots.map((h) => (
                   <Circle

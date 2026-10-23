@@ -126,7 +126,7 @@ def query_ai(request: AIQueryRequest, db: Session = Depends(get_db)):
                 generation_config={"response_mime_type": "application/json"}
             )
 
-            prompt = f"""You are the AI Intelligence Command Center for CIVIC RADAR platform.
+            prompt = f"""You are the AI Intelligence Command Center for CivicNova AI platform.
 User Query Intent: {intent}
 Answer using ONLY the exact live database metrics provided below.
 DO NOT fabricate or alter any numbers. Keep summary concise (1-3 sentences).
@@ -387,7 +387,7 @@ def get_daily_briefing(db: Session = Depends(get_db)):
         ))
 
     summary_text = (
-        f"Good morning, Administrator. Civic Radar analyzed the latest civic activity across the city. "
+        f"Good morning, Administrator. CivicNova AI analyzed the latest civic activity across the city. "
         f"{cat_display} requires immediate operational attention due to concentrated reports and elevated hazard urgency."
     )
 
@@ -401,7 +401,7 @@ def get_daily_briefing(db: Session = Depends(get_db)):
                 generation_config={"response_mime_type": "application/json"}
             )
 
-            prompt = f"""You are the AI Daily Briefing Generator for CIVIC RADAR.
+            prompt = f"""You are the AI Daily Briefing Generator for CivicNova AI.
 Generate a professional 2-sentence executive summary for the Administrator using ONLY these exact live metrics:
 - Total Active Reports: {total_reports}
 - Critical Priority: {priority_counts['CRITICAL']}

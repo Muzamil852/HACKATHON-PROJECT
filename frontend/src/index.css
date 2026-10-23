@@ -5,9 +5,12 @@
   --font-sans: 'Inter', system-ui, sans-serif;
 }
 
-/* Base Light Civic Operations Theme */
+/* CivicNova AI Warm White & Charcoal Identity */
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+img, video, canvas, svg {
   max-width: 100%;
 }
 
@@ -19,8 +22,8 @@ html, body, #root {
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #f8fafc;
-  color: #0f172a;
+  background-color: #FAF9F6;
+  color: #1C1917;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,16 +31,16 @@ body {
 /* Light Card Utilities */
 .glass-card {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #E7E5E4;
   border-radius: 12px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 0 1px 3px 0 rgba(28, 25, 23, 0.04), 0 1px 2px 0 rgba(28, 25, 23, 0.02);
 }
 
 .glass-card-elevated {
   background: #ffffff;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #D6D3D1;
   border-radius: 12px;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 10px 25px -5px rgba(28, 25, 23, 0.07), 0 8px 10px -6px rgba(28, 25, 23, 0.03);
 }
 
 /* Radar Sweep Animation */

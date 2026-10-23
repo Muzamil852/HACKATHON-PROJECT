@@ -1,4 +1,4 @@
-"""CIVIC RADAR — FastAPI Application Entry Point."""
+"""CivicNova AI — FastAPI Application Entry Point."""
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -11,9 +11,9 @@ import os
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="CIVIC RADAR API",
-    description="AI-Powered Civic Intelligence & Response Platform",
-    version="1.0.0",
+    title="CivicNova AI API",
+    description="Every Report. Smarter Decisions. Better Cities. AI-Powered Civic Intelligence & Response Platform",
+    version="2.0.0",
 )
 
 app.add_middleware(
@@ -42,7 +42,12 @@ app.include_router(departments.router, prefix="/departments", tags=["Departments
 
 @app.get("/")
 def root():
-    return {"app": "CIVIC RADAR", "status": "running", "version": "1.0.0"}
+    return {
+        "app": "CivicNova AI",
+        "tagline": "Every Report. Smarter Decisions. Better Cities.",
+        "status": "running",
+        "version": "2.0.0",
+    }
 
 
 @app.get("/health")

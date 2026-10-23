@@ -84,7 +84,7 @@ export default function AiCenterPage() {
           AI CIVIC OPERATIONS
         </h1>
         <p className="text-xs text-slate-500 mt-1">
-          Ask Civic Radar what needs attention. Get evidence-backed operational intelligence.
+          Ask CivicNova AI what needs attention. Get evidence-backed operational intelligence.
         </p>
       </div>
 

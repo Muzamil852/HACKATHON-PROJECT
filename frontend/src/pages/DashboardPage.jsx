@@ -369,7 +369,7 @@ export default function DashboardPage() {
                   GOOD MORNING, ADMINISTRATOR.
                 </span>
                 <p className="text-xs sm:text-sm text-slate-800 font-semibold leading-relaxed">
-                  "{briefingData.summary || 'Civic Radar analyzed the latest civic activity across the city.'}"
+                  "{briefingData.summary || 'CivicNova AI analyzed the latest civic activity across the city.'}"
                 </p>
               </div>
 
@@ -587,8 +587,8 @@ export default function DashboardPage() {
         <Card className="lg:col-span-2 h-[300px] sm:h-[380px] lg:h-full flex flex-col p-0 overflow-hidden relative border-slate-200">
           <div className="absolute top-3 left-3 z-[400] pointer-events-none">
             <div className="bg-white/90 backdrop-blur-xs px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2">
-              <MapPin className="w-3.5 h-3.5 text-blue-600" />
-              <span className="text-xs font-bold text-slate-900">Civic Radar Map</span>
+              <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+              <span className="text-xs font-bold text-slate-900">CivicNova Intelligence Map</span>
             </div>
           </div>
 
@@ -599,7 +599,11 @@ export default function DashboardPage() {
               </div>
             ) : (
               <MapContainer center={[24.87, 67.05]} zoom={11} style={{ height: '100%', width: '100%' }}>
-                <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png" />
+                <TileLayer
+                  attribution='&copy; <a href="https://www.esri.com/">Esri</a> &mdash; Street Map'
+                  url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+                  maxZoom={19}
+                />
                 
                 {hotspots.map((h, i) => (
                   <Circle

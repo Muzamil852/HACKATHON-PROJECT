@@ -1,4 +1,4 @@
-"""Seed realistic demo data for CIVIC RADAR."""
+"""Seed realistic demo data for CivicNova AI."""
 import random
 import uuid
 from datetime import datetime, timedelta, timezone

@@ -1,9 +1,10 @@
-# CIVIC RADAR
-## AI-Powered Civic Intelligence & Response Platform
+# CivicNova AI
+## Every Report. Smarter Decisions. Better Cities.
+### AI-Powered Civic Intelligence & Municipal Response Platform
 
 > Transform citizen reports into city-level intelligence. Detect patterns. Prioritize action. Recommend solutions.
 
-![CIVIC RADAR](https://img.shields.io/badge/CIVIC-RADAR-6366f1?style=for-the-badge&logo=radar&logoColor=white)
+![CivicNova AI](https://img.shields.io/badge/CivicNova-AI-059669?style=for-the-badge&logo=radar&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)
@@ -19,11 +20,11 @@ Cities receive thousands of citizen complaints daily — potholes, water leaks, 
 - Route complaints to the **right department**
 - Prioritize **what needs attention first**
 
-Traditional systems treat each complaint as an isolated ticket. **CIVIC RADAR treats them as intelligence signals.**
+Traditional systems treat each complaint as an isolated ticket. **CivicNova AI treats them as intelligence signals.**
 
 ## 💡 Solution
 
-CIVIC RADAR is an AI-powered platform that:
+CivicNova AI is an AI-powered platform that:
 
 1. **Understands** citizen reports using multimodal AI (text + images)
 2. **Classifies** complaints by category, priority, and department
@@ -73,7 +74,7 @@ CITIZEN REPORT
 
 ## ✨ Key Features
 
-### 🛡️ Civic Radar (Signature Feature)
+### 🛡️ CivicNova Intelligence Radar (Signature Feature)
 Detects when individual complaints form a larger pattern — e.g., 12 water-related reports in Sector 7 aren't 12 separate issues, they're one emerging infrastructure failure.
 
 ### 🤖 AI Engine

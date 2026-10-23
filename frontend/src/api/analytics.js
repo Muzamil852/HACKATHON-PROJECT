@@ -2,7 +2,7 @@ import client from './client';
 
 export const getAnalytics = async () => {
   try {
-    const res = await client.get('/analytics');
+    const res = await client.get('/analytics/');
     return res.data;
   } catch (error) {
     return {

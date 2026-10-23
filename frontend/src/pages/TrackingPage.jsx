@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api/client';
 import { useSearchParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { toast } from 'react-hot-toast';
@@ -9,7 +9,7 @@ import Badge from '../components/ui/Badge';
 import Skeleton from '../components/ui/Skeleton';
 import EmptyState from '../components/ui/EmptyState';
 
-const API_BASE = 'http://localhost:8000';
+
 
 export default function TrackingPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -24,7 +24,7 @@ export default function TrackingPage() {
     setLoading(true);
     setError(false);
     try {
-      const response = await axios.get(`${API_BASE}/complaints/${id}`);
+      const response = await api.get(`/complaints/${id}`);
       setComplaint(response.data);
       setSearchParams({ id });
     } catch (err) {

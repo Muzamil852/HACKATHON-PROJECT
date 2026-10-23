@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     UPLOAD_DIR: str = "uploads"
     APP_NAME: str = "CivicNova AI"
     DEBUG: bool = True
+    ALLOWED_ORIGINS: Optional[str] = None
     
     class Config:
         env_file = ".env"

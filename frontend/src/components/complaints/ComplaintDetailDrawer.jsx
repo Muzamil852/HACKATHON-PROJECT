@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { getComplaint, updateComplaint, getSimilarComplaints, getComplaintExplainability } from '../../api/complaints';
 import { getDepartmentContact, createDispatchAction, getDispatchLogs } from '../../api/departments';
+import { getMediaUrl } from '../../api/client';
 import Badge from '../ui/Badge';
 import { toast } from 'react-hot-toast';
 
@@ -505,7 +506,7 @@ Transmitted via CivicNova AI Municipal Command Center`;
                     <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Photo Evidence</h3>
                     <div className="w-full max-h-[280px] overflow-hidden rounded-xl bg-slate-50 border border-slate-200 relative group">
                       <img
-                        src={`http://localhost:8000${complaint.image_path}`}
+                        src={getMediaUrl(complaint.image_path)}
                         alt="Evidence"
                         className="w-full h-full max-h-[280px] object-contain"
                         onError={(e) => { e.target.style.display = 'none'; }}
@@ -805,7 +806,7 @@ Transmitted via CivicNova AI Municipal Command Center`;
           >
             <div className="relative max-w-4xl max-h-[90vh] rounded-2xl overflow-hidden border border-slate-700">
               <img
-                src={`http://localhost:8000${complaint.image_path}`}
+                src={getMediaUrl(complaint.image_path)}
                 alt="Full Evidence"
                 className="w-full h-full object-contain"
               />

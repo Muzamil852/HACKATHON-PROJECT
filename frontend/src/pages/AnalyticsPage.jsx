@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api/client';
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   PieChart, Pie, Cell, LineChart, Line, Legend
@@ -9,8 +9,6 @@ import Card from '../components/ui/Card';
 import Skeleton from '../components/ui/Skeleton';
 import KpiCard from '../components/ui/KpiCard';
 import { toast } from 'react-hot-toast';
-
-const API_BASE = 'http://localhost:8000';
 
 const COLORS = ['#2563eb', '#16a34a', '#d97706', '#0284c7', '#7c3aed', '#dc2626', '#db2777', '#9333ea'];
 const PRIORITY_COLORS = { 'CRITICAL': '#dc2626', 'HIGH': '#d97706', 'MEDIUM': '#2563eb', 'LOW': '#16a34a' };
@@ -22,7 +20,7 @@ export default function AnalyticsPage() {
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
-        const response = await axios.get(`${API_BASE}/analytics/`);
+        const response = await api.get('/analytics/');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching analytics:', error);

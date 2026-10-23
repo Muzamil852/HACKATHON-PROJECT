@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useDropzone } from 'react-dropzone';
-import axios from 'axios';
+import api from '../api/client';
 import { toast } from 'react-hot-toast';
 import { 
   Radar, MapPin, Upload, User, Phone, FileText, CheckCircle2, 
@@ -106,7 +106,7 @@ export default function ReportPage() {
         formData.append('file', file);
       }
 
-      const res = await axios.post('http://localhost:8000/complaints/', formData, {
+      const res = await api.post('/complaints/', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -114,7 +114,16 @@ export default function ReportPage() {
       toast.success('Civic Report Submitted & Analyzed!');
     } catch (err) {
       console.error(err);
-      const detail = err.response?.data?.detail || 'Failed to submit report. Please check input.';
+      let detail = 'Failed to submit report. Please check input.';
+      if (err.response?.data?.detail) {
+        if (typeof err.response.data.detail === 'string') {
+          detail = err.response.data.detail;
+        } else if (Array.isArray(err.response.data.detail)) {
+          detail = err.response.data.detail.map((d) => (typeof d === 'string' ? d : (d.msg || 'Invalid input'))).join(', ');
+        }
+      } else if (err.message) {
+        detail = err.message;
+      }
       toast.error(detail);
       setAiStepIndex(-1);
     } finally {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api/client';
 import { useQuery } from '@tanstack/react-query';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'react-hot-toast';
@@ -13,7 +13,7 @@ import Skeleton from '../components/ui/Skeleton';
 import ComplaintDetailDrawer from '../components/complaints/ComplaintDetailDrawer';
 import { getDashboardSummary } from '../api/dashboard';
 
-const API_BASE = 'http://localhost:8000';
+
 
 export default function AiCenterPage() {
   const [question, setQuestion] = useState('What needs attention right now?');
@@ -34,7 +34,7 @@ export default function AiCenterPage() {
   const { data: actionQueue = [], isLoading: loadingActions } = useQuery({
     queryKey: ['actionQueue'],
     queryFn: async () => {
-      const res = await axios.get(`${API_BASE}/incidents/actions?limit=8`);
+      const res = await api.get('/incidents/actions?limit=8');
       return res.data;
     },
     refetchInterval: 15000,
@@ -57,7 +57,7 @@ export default function AiCenterPage() {
     setActivePreset(queryText);
     
     try {
-      const res = await axios.post(`${API_BASE}/ai/query`, { question: queryText });
+      const res = await api.post('/ai/query', { question: queryText });
       setResponse(res.data);
     } catch (err) {
       console.error(err);

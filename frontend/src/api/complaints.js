@@ -1,8 +1,8 @@
 import api from './client';
 
-export const getComplaints = (params) => api.get('/complaints', { params }).then(r => r.data);
+export const getComplaints = (params) => api.get('/complaints/', { params }).then(r => r.data);
 export const getComplaint = (id) => api.get(`/complaints/${id}`).then(r => r.data);
-export const createComplaint = (data) => api.post('/complaints', data).then(r => r.data);
+export const createComplaint = (data) => api.post('/complaints/', data).then(r => r.data);
 export const updateComplaint = (id, data) => api.patch(`/complaints/${id}`, data).then(r => r.data);
 export const analyzeComplaint = (id) => api.post(`/complaints/${id}/analyze`).then(r => r.data);
 export const getSimilarComplaints = (id) => api.get(`/complaints/${id}/similar`).then(r => r.data);
